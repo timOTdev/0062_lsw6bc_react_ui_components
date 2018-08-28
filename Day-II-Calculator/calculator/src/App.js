@@ -10,21 +10,43 @@ import Row6 from './components/RowComponents/Row6'
 class App extends Component {
   constructor() {
     super()
-
     this.state = {
       total: 0,
     }
+  }
+
+  clear = () => {
+    let total = 0
+    this.setState({ total })
+  }
+  divide = (num) => {
+    console.log(num)
+  }
+  multiply = (num) => {
+    console.log(num)
+  }
+  substract = (num) => {
+    console.log(num)
+  }
+  add = (num) => {
+    console.log(num)
+  }
+  total = (num) => {
+    console.log(num)
   }
 
   render() {
     return (
       <div className="App">
         <CalculatorDisplay total={this.state.total} />
-        <Row2 />
-        <Row3 />
-        <Row4 />
-        <Row5 />
-        <Row6 />
+        <Row2 
+          clear={this.clear}
+          divide={this.divide}
+        />
+        <Row3 multiply={this.multiply} />
+        <Row4 subtract={this.subtract} />
+        <Row5 add={this.add} />
+        <Row6 total={this.total} />
       </div>
     )
   }
